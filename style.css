@@ -1,0 +1,135 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+img {
+    width: 100%;
+}
+body {
+    background: url(img/overall-bg.jpg) no-repeat center center / cover;
+    height: 100vh;
+}
+html {
+    height: 100vh;
+}
+.left-content {
+    background: url(img/left-bg.jpg) no-repeat center left / cover;
+    border-radius: 48px 0 0 48px;
+}
+.right-content img {
+    border-radius: 0 48px 48px 0;
+}
+.fs-48 {
+    font-size: 48px;
+}
+h1, h2, h3, h4, h5 {
+    color: #2e3454;
+}
+body {
+    color: #777777;
+    font-weight: medium;
+    font-size: 14px;
+}
+.fs-16 {
+    font-size: 16px;
+}
+html ul {
+    list-style: none;
+}
+.nav-pills .nav-link {
+    border-radius: 0;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #777777;
+    font-weight: bold;
+    background: transparent;
+    border-bottom: 3px solid #12204a;
+}
+.nav-link {
+    color: #777777;
+}
+.form-control {
+    border-top: 1px solid #dee2e6;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    font-size: 14px;
+}
+.form-label {
+    margin: 8px 8px 8px 12px;
+}
+.btn {
+    border-radius: 2px;
+}
+.btn-primary {
+    background: #12204a;
+    border-color: transparent;
+    padding: 10px 100px;
+}
+.btn-primary:hover {
+    background: #000000;
+    border-color: transparent;
+    padding: 10px 100px;
+}
+.option .or:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #bcbec0;
+    width: 45%;
+    height: 1px;
+}
+.option .or::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #bcbec0;
+    width: 45%;
+    height: 1px;
+}
+.option .method a {
+    color: #58595b;
+    border: 1px solid #bcbec0;
+    border-radius: 2px;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.bi-google::before {
+    color: #dc3545;
+}
+.bi-facebook::before {
+    color: #0d6efd;
+}
+.forgot-pass {
+    color: #58595b;
+} 
+.forgot-pass:hover {
+    font-weight: bold;
+    color: #58595b;
+}
+.form-check-input[type=checkbox] {
+    border-radius: 0;
+    border-color: #58595b;
+    box-shadow: none;
+}
+.form-check-input:checked {
+    background: rgb(88, 89, 91);
+    border-color: #58595b;
+}
+.form-check {
+    margin: 0;
+}
+.nav-pills.header .nav-link.active, .nav-pills .show>.nav-link {
+    color: #3c6d91;
+    border: 1px solid #3c6d91;
+    border-radius: 3px;
+
+}
+.nav.header>.nav-link {
+    color: #3c6d91;
+
+}

@@ -13,8 +13,8 @@
     <title>Document</title>
 </head>
 <body class="d-flex justify-content-center align-items-center flex-column">
-    <div class="container px-5">
-        <div class="row">
+    <div class="container">
+        <div class="px-0 px-lg-5 inner">
             <ul class="nav nav-pills mb-3 justify-content-end header" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Login</button>
@@ -27,9 +27,9 @@
                 <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab" tabindex="0">
                     <div class="row g-0">
                         <div class="col-lg-6 col-12 left-content d-flex justify-content-center align-items-center">
-                            <div class="main text-center flex-grow-1 px-5">
-                                <h3 class="fs-48 mb-5">Login</h3>
-                                <ul class="nav nav-pills mb-3 justify-content-between nav-login border-bottom" id="pills-tab" role="tablist">
+                            <div class="main text-center flex-grow-1">
+                                <h3 class="fs-36 mb-4 mt-4 mt-lg-0">Login</h3>
+                                <ul class="nav nav-pills mb-3 justify-content-between align-items-center nav-login border-bottom" id="pills-tab" role="tablist">
                                     <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="pills-email-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="bi bi-envelope-open pe-2"></i>Login with email</button>
                                     </li>
@@ -40,51 +40,69 @@
                                 <div class="tab-content" id="pills-tabContent">
                                     <div class="tab-pane fade show active" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab" tabindex="0">
                                         <form class="mt-5">
-                                            <div class="mb-0 border text-start">
-                                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" ="Enter your email">
+                                            <div class="mb-0 border-top text-start field">
+                                                <label for="exampleInputEmail1" class="form-label fw-bold">Email address</label>
+                                                <div class="invalid position-relative email">
+                                                    <input type="email" class="form-control email-input" id="email" name="email" placeholder="Enter your email" required pattern=".+@globex\.com">
+                                                    <div class="status"></div>
+                                                    <i class="bi bi-x-circle position-absolute"></i>
+                                                </div>
                                             </div>
                                             <div class="mb-3 border text-start">
-                                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" ="Enter your password">
+                                                <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
+                                                <div class="position-relative password">
+                                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
+                                                    <div class="status"></div>
+                                                </div>
                                             </div>
                                             <div class="row d-flex justify-content-between mb-3 align-items-center">
-                                                <div class="col-lg-6 col-12">
-                                                    <div class="form-check text-start">
+                                                <div class="col-6">
+                                                    <div class="form-check text-start d-flex align-items-center">
                                                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                                                        <label class="form-check-label ps-2" for="exampleCheck1">Remember me</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6 col-12 text-end">
-                                                    <a href="#" class="text-decoration-none forgot-pass">Forgot Password</a>
+                                                <div class="col-6 text-end">
+                                                    <a href="forgot-pass.html" class="text-decoration-none forgot-pass">Forgot Password</a>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary mt-5">LOGIN</button>
+                                            <button type="submit" class="btn btn-primary mt-1 mt-lg-5 fs-14">LOGIN</button>
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="pills-phone" role="tabpanel" aria-labelledby="pills-phone-tab" tabindex="0">
                                         <div class="tab-pane fade show active" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab" tabindex="0">
                                             <form class="mt-5">
-                                                <div class="mb-0 text-start border">
-                                                <label for="exampleInputEmail1" class="form-label">Phone Number</label>
-                                                <input type="number" class="form-control" id="exampleInputEmail1" ="Enter your phone number">
+                                                <div class="otp-invalid d-flex align-items-center mb-4">
+                                                    <p class="text-start mb-0 ms-3">Sent OTP failed, please try again.</p>
                                                 </div>
+                                                <div class="mb-0 text-start border-top">
+                                                    <label for="exampleInputEmail1" class="form-label fw-bold">Phone Number</label>
+                                                    <div class="inputBtn position-relative text">
+                                                        <input type="text" class="form-control text" id="exampleInputEmail1" placeholder="Enter your phone number" required>
+                                                        <div class="status"></div>
+                                                        <button class="btn btn-secondary position-absolute"><span>Send OTP</span></button>
+                                                    </div>
+                                                </div>
+                                                
                                                 <div class="mb-3 text-start border">
-                                                <label for="exampleInputPassword1" class="form-label">OTP Code</label>
-                                                <input type="number" class="form-control" id="exampleInputPassword1" ="Enter OTP number">
+                                                    <label for="exampleInputPassword1" class="form-label fw-bold">OTP Code</label>
+                                                    <div class="position-relative text">
+                                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter OTP number">
+                                                        <div class="status"></div>
+                                                    </div>
                                                 </div>
                                                 <div class="row d-flex justify-content-between mb-3 align-items-center">
-                                                    <div class="col-lg-6 col-12">
-                                                        <div class="form-check text-start">
+                                                    <div class="col-6">
+                                                        <div class="form-check text-start align-items-center">
                                                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                                                            <label class="form-check-label ps-2" for="exampleCheck1">Remember me</label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6 col-12 text-end">
-                                                        <a href="#" class="text-decoration-none forgot-pass">Forgot Password</a>
+                                                    <div class="col-6 text-end">
+                                                        <a href="forgot-pass.html" class="text-decoration-none forgot-pass">Forgot Password</a>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary mt-5">LOGIN</button>
+                                                <button type="submit" class="btn btn-primary mt-1 mt-lg-5 fs-14">LOGIN</button>
                                             </form>
                                         </div>
                                     </div>
@@ -94,37 +112,38 @@
                                         OR
                                     </p>
                                     <div class="row method">
-                                        <div class="col-lg-6 col-12 google">
+                                        <div class="col-lg-6 col-12 google my-md-2">
                                             <a href="#" class="text-decoration-none d-block">
-                                                <i class="bi bi-google"></i>
+                                                <i class="bi bi-google pe-2"></i>
                                                 Login with Google
                                             </a>
                                         </div>
-                                        <div class="col-lg-6 col-12 facebook">
+                                        <div class="col-lg-6 col-12 facebook my-md-2">
                                             <a href="#" class="text-decoration-none d-block">
-                                                <i class="bi bi-facebook"></i>
+                                                <i class="bi bi-facebook pe-2"></i>
                                                 Login with Facebook
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="forgot pt-5">
+                                <div class="forgot pt-lg-5 pt-md-0 pt-2">
                                     <br>
-                                    <p>Already have an account? <a href="#">Login</a></p>
+                                    <p>Don't have an account? <a href="#pills-email-signup" data-bs-toggle="pill" data-bs-target="#pills-email-signup">click here to register</a></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-12 d-none d-lg-block right-content">
+                        <div class="col-lg-6 col-12 d-none d-lg-block right-content position-relative">
                             <img src="img/right-bg.jpg" alt="">
+                            <h1 class="position-absolute title-right">METAWORLD</h1>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab" tabindex="0">
                     <div class="row g-0">
                         <div class="col-lg-6 col-12 left-content d-flex justify-content-center align-items-center">
-                            <div class="main text-center flex-grow-1 px-5">
-                                <h3 class="fs-48 mb-5">Create Account</h3>
-                                <ul class="nav nav-pills mb-3 justify-content-between nav-login border-bottom" id="pills-tab" role="tablist">
+                            <div class="main text-center flex-grow-1">
+                                <h3 class="fs-36 mb-4 mt-4 mt-lg-0">Create Account</h3>
+                                <ul class="nav nav-pills mb-3 justify-content-between align-items-center nav-login border-bottom" id="pills-tab" role="tablist">
                                     <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="pills-email-tab" data-bs-toggle="pill" data-bs-target="#pills-email-signup" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="bi bi-envelope-open pe-2"></i>Signup with email</button>
                                     </li>
@@ -135,33 +154,57 @@
                                 <div class="tab-content" id="pills-tabContent">
                                     <div class="tab-pane fade show active" id="pills-email-signup" role="tabpanel" aria-labelledby="pills-email-tab" tabindex="0">
                                         <form class="mt-5">
-                                            <div class="mb-0 border text-start">
-                                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" ="Enter your email">
+                                            <div class="mb-0 border-top text-start">
+                                                <label for="exampleInputEmail1" class="form-label fw-bold">Email address</label>
+                                                <div class="position-relative email">
+                                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" required>
+                                                    <div class="status"></div>
+                                                </div>
                                             </div>
-                                            <div class="mb-0 border text-start">
-                                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" ="Enter your password">
+                                            <div class="mb-0 border-top text-start">
+                                                <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
+                                                <div class="position-relative password">
+                                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
+                                                    <div class="status"></div>
+                                                </div>
                                             </div>
                                             <div class="mb-3 border text-start">
-                                                <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword1" ="Enter your password">
+                                                <label for="exampleInputPassword1" class="form-label fw-bold">Confirm Password</label>
+                                                <div class="position-relative password">
+                                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
+                                                    <div class="status"></div>
+                                                </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary mt-5">SIGNUP</button>
+                                            <div class="pass-invalid text-start">
+                                                <p class="text-danger m-0">Password confirm is error</p>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary mt-5 fs-14">SIGNUP</button>
                                         </form>
                                     </div>
                                     <div class="tab-pane fade" id="pills-phone-signup" role="tabpanel" aria-labelledby="pills-phone-tab" tabindex="0">
                                         <div class="tab-pane fade show active" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab" tabindex="0">
                                             <form class="mt-5">
-                                                <div class="mb-0 text-start border">
-                                                <label for="exampleInputEmail1" class="form-label">Phone Number</label>
-                                                <input type="number" class="form-control" id="exampleInputEmail1" ="Enter your phone number">
+                                                <div class="otp-invalid d-flex align-items-center mb-4">
+                                                    <p class="text-start mb-0 ms-3">Sent OTP failed, please try again.</p>
+                                                </div>
+                                                <div class="mb-0 text-start border-top">
+                                                    <div class="position-relative">
+                                                        <label for="exampleInputEmail1" class="form-label fw-bold">Phone Number</label>
+                                                        <div class="inputBtn text position-relative">
+                                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter your phone number" required>
+                                                            <div class="status"></div>
+                                                            <button class="btn btn-secondary position-absolute"><span>Send OTP</span></button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="mb-3 text-start border">
-                                                <label for="exampleInputPassword1" class="form-label">OTP Code</label>
-                                                <input type="number" class="form-control" id="exampleInputPassword1" ="Enter OTP number">
+                                                    <label for="exampleInputPassword1" class="form-label fw-bold">OTP Code</label>
+                                                    <div class="position-relative text">
+                                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter OTP number">
+                                                        <div class="status"></div>
+                                                    </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary mt-5">SIGNUP</button>
+                                                <button type="submit" class="btn btn-primary mt-5 fs-14">SIGNUP</button>
                                             </form>
                                         </div>
                                     </div>
@@ -171,28 +214,29 @@
                                         OR
                                     </p>
                                     <div class="row method">
-                                        <div class="col-lg-6 col-12 google">
+                                        <div class="col-lg-6 col-12 google my-md-2">
                                             <a href="#" class="text-decoration-none d-block">
-                                                <i class="bi bi-google"></i>
+                                                <i class="bi bi-google pe-2"></i>
                                                 Login with Google
                                             </a>
                                         </div>
-                                        <div class="col-lg-6 col-12 facebook">
+                                        <div class="col-lg-6 col-12 facebook my-md-2">
                                             <a href="#" class="text-decoration-none d-block">
-                                                <i class="bi bi-facebook"></i>
+                                                <i class="bi bi-facebook pe-2"></i>
                                                 Login with Facebook
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="forgot pt-5">
+                                <div class="forgot pt-lg-5 pt-md-0 pt-2">
                                     <br>
                                     <p>Already have an account? <a href="#">Login</a></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-12 d-none d-lg-block right-content">
+                        <div class="col-lg-6 col-12 d-none d-lg-block right-content position-relative">
                             <img src="img/right-bg.jpg" alt="">
+                            <h1 class="position-absolute title-right">METAWORLD</h1>
                         </div>
                     </div>
                 </div>
